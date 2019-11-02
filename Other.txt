@@ -1,0 +1,15 @@
+.hide() - Hide the matched elements.
+.show() - Display the matched elements.
+.toggle() - Display or hide the matched elements.
+
+.addClass() - Adds the specified class(es) to each element in the set of matched elements.
+.css() - Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+.hasClass() - Determine whether any of the matched elements are assigned the given class.
+
+.keydown() - Bind an event handler to the “keydown” JavaScript event, or trigger that event on an element.
+.keypress() - Bind an event handler to the “keypress” JavaScript event, or trigger that event on an element.
+.keyup() - Bind an event handler to the “keyup” JavaScript event, or trigger that event on an element.
+
+.before() - Insert content, specified by the parameter, before each element in the set of matched elements.
+.insertAfter() - Insert every element in the set of matched elements after the target. [jQuery("<h1>sometext</h1>").insertAfter(".inputClass");] -->insert html element after every .inputClass.
+.insertBefore() - Insert every element in the set of matched elements before the target.

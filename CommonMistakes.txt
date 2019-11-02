@@ -1,0 +1,10 @@
+1) Do not give same name to a function and a variable. You will end up in problem.
+2) Do not give same IDs to two different elements. You will end up picking the wrong element.
+3) Do not write inline scripts
+4) Do not write inline css.
+5) Do not write js in jsps. Maintenance is a problem, script gets downloaded everytime.
+6) Not caching the selectors.
+7) Mixing javascript and jquery.
+8) Defining global variables. Shared between multiple scripts
+9) Not using bc. Not specifying escape parameters when using bc.
+10) Encapsulate your js. Expose only required functions --> Modular pattern.

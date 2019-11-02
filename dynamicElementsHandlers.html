@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="dynamicElementsHandlers.js"></script>
+		<link rel="stylesheet" type="text/css" href="Login.css" />	
+		<title>
+			Feedback
+		</title>
+	</head>
+	<body>
+		<div id = "commentsForm">
+			
+			&nbsp;<br/>
+			<div id = "Login" >	
+				<input name = "signup" id = "signup" type = "button" value = "Sign up" />
+				<input name = "signin" id = "signin" type = "button" value = "Sign in" /> 
+			</div>
+			&nbsp;<br/>&nbsp;&nbsp;<b> <u>Enter Your Comments : </u> </b>	
+			<div id="errorSection"> </div>
+			<div id = "commentsSection">
+				
+				<div id = "usernameSection" class = "fieldClass">
+					<span class="labelClass"> <b> Username : </b> </span>
+					<span>
+						<input id = "username" name = "username" class = "inputClass formInput"/>
+					</span>
+				</div>
+				<div class = "fieldClass middle">
+					<span class="labelClass">
+						<Label> <b> Comments : </b> </Label>
+					</span>
+					<span>
+						<textarea id= "comment" class = "inputClass"></textarea>
+					</span>
+				</div>
+			</div>
+			
+			<div class = "fieldClass">
+				<input id = "submit" type = "submit" value = "Submit" />
+			</div>
+		</div>
+	<body>
+</html>
+
+<script>
+	jQuery(document).ready( function()
+	{
+		demo();
+	});
+	
+</script>

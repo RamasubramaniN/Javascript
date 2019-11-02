@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="selector.js"></script>
+		<link rel="stylesheet" type="text/css" href="Login.css" />	
+		<title>
+			Feedback
+		</title>
+	</head>
+	<body>
+		<div id = "commentsForm">
+		
+			&nbsp;<br/>
+			<div id = "Login" >	
+				<input name = "signup" id = "signup" type = "button" value = "Sign up" />
+				<input name = "signin" id = "signin" type = "button" value = "Sign in" /> 
+			</div>
+			&nbsp;<br/>&nbsp;&nbsp;<b> <u>Enter Your Comments : </u> </b>	
+			<div id = "commentsSection">
+				
+				<div class = "fieldClass" name="wrapperUsername">
+					<span class="labelClass" id = "x"> <b> Username : </b> </span>
+					<span>
+						<input id = "username" name = "username" class = "inputClass" value="Ram"/>
+					</span>
+				</div>
+				<div class = "fieldClass"  name="wrapperEmail">
+					<span class="labelClass">
+						<Label> <b> Email : </b> </Label>
+					</span>
+					<span>
+						<input id = "email" name = "Email" type = "text" class = "inputClass emailClass"/>
+					</span>
+				</div>
+				<div class = "fieldClass middle" name="wrapperComments">
+					<span class="labelClass">
+						<Label> <b> Comments : </b> </Label>
+					</span>
+					<span>
+						<textarea id= "comment"  name = "Comments" class = "inputClass"></textarea>
+					</span>
+				</div>
+			</div>
+			
+			<div class = "fieldClass">
+				<input id = "submit" type = "submit" value = "Submit" />
+			</div>
+		</div>
+	<body>
+</html>
+
+<script>
+
+	//Document loading events. 1) bind 2)load 3)unload.
+	//The load event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts. It doesn't work consistently nor reliably cross-browser.
+	//jQuery( "#commentsSection" ).load(function() {
+		//console.log("Comments section loaded");
+	//});
+
+	//jQuery( window ).load(function() 
+	//{
+		//console.log("Full page loaded");
+	//});
+
+	//JavaScript provides the load event for executing code when a page is rendered, this event does not get triggered until all assets such as images have been completely received. In most cases, the script can be run as soon as the DOM hierarchy has been fully constructed. The handler passed to .ready() is guaranteed to be executed after the DOM is ready, so this is usually the best place to attach all other event handlers and run other jQuery code. 
+	jQuery(document).ready( function()
+	{
+		console.log("hi");
+		demo();
+	});
+	
+</script>
