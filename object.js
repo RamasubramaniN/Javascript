@@ -6,10 +6,12 @@ function initObject()
 
 	//Objects are like hashmaps. You can add properties to it.
 	//Way 1 : Define objects -- Not reusable.
-	//Every object in JavaScript is an instance of the object Object and therefore inherits all its properties and methods.
+	//Every object in JavaScript is an instance of the object Object and therefore inherits
+	// all its properties and methods.
 	var car = { myCar: "Saturn", getCar: CarTypes("Honda"), special: Sales };
 
-	//console.log() function is not actually a part of JavaScript itself, but many browsers implement it to aid in debugging.
+	//console.log() function is not actually a part of JavaScript itself, but many browsers implement it to 
+	//aid in debugging.
 	console.log(car.myCar);   // Saturn
 	console.log(car.getCar);  // Honda -- getCar is also a property.
 	console.log(car.special); // Toyota
@@ -55,13 +57,14 @@ function createObjects()
 	console.log("*************** Without using Constructor - Not reusable ******************");
 	var person = {name : "Ramasubramani"}; //This uses Object() constructor.
 	console.log(person.name);
-	console.log("person.constructor : ", person.constructor);//Object()
-		
+	//person is not created by user defined constructor.
+	console.log("person.constructor : ", person.constructor);//ƒ Object() { [native code] }
 	console.log("*************** Using Constructor - Reusable (Accepts properties as parameters) ******************");
 	//Method2 to create objects --> reusable
 	var subramani = new Person('Ramasubramani');
-	console.log(subramani.name);
-	console.log("subramani.constructor : ",subramani.constructor);//Person(name)
+	console.log(subramani.name); //Ramasubramani
+	//subramani is created by user defined constructor.
+	console.log("subramani.constructor : ",subramani.constructor);//f Person(name){this.name = name;}
 	console.log("*************** Object Creation End ****************");
 }
 
@@ -85,7 +88,7 @@ function constructorFunction()
 	
 	var dave = new Person('Dave');
 	
-	console.log("dave.constructor : ", dave.constructor);
+	console.log("dave.constructor : ", dave.constructor);//f Person(name){this.name = name;}
 	console.log("dave.constructor === Person : " + (dave.constructor === Person)); //true
 	console.log({}.constructor());//({}).constructor returns the Object constructor function.
 	
@@ -93,6 +96,13 @@ function constructorFunction()
 }
 
 //Constructor function to create persons.
+/*Functions are function objects. In JavaScript, anything that is not a primitive type 
+( undefined, null,boolean, number, or string) is an object. Objects in JavaScript are extremely versatile.
+ Because of this, we can even pass a function as a parameter into another function.
+When a function accepts another function as a parameter, or returns a function, 
+it is called a higher-order function. You’ve probably already used a bunch of higher order functions 
+and don’t even know it: Array.prototype.map and Array.prototype.filter are higher order functions 
+(Just to name a couple).*/
 function Person(name) 
 {
   this.name = name;
@@ -104,8 +114,10 @@ function instanceofFunction()
 	console.log("The difference between instanceof and the constructor property is that instanceof inspects the object’s prototype chain/hierarchy.");
 	
 	var somePerson = new Person('Ramasubramani');
-	console.log("somePerson instanceof Person : " + (somePerson instanceof Person));
-	console.log("somePerson instanceof Object : " + (somePerson instanceof Object));// Below statements are the proof that Object is in the prototype chain. Don't use __proto__. Not compatible with all browsers.
+	console.log("somePerson instanceof Person : " + (somePerson instanceof Person)); //true
+	console.log("somePerson instanceof Object : " + (somePerson instanceof Object));// true 
+	//Below statements are the proof that Object is in the prototype chain. Don't use __proto__. 
+	//Not compatible with all browsers.
 	console.log("somePerson.__proto__ : ", somePerson.__proto__);// Person {}
 	console.log("somePerson.__proto__.__proto__ : ", somePerson.__proto__.__proto__);//Object()
 	
