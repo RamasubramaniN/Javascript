@@ -10,6 +10,7 @@ function initCall(){
 	staticMethodExample();
 	getterSetterExample();
 	spreadAttributesExample();
+	classExample();
 }
 
 //let is similar to var but let has scope. let is only accessible in the block level it is defined.
@@ -211,4 +212,105 @@ let sumWithSpreadAttributesFeature = (...arr) => {
 		sum += element;
 	}
 	console.log("Sum with spread attributes : " + sum);
+}
+
+/*Classes are in fact "special functions", and just as you can define function expressions and function declarations,
+ the class syntax has two components: 1) class expressions 2) class declarations.*/
+function classExample() {
+	/*(An important difference between function declarations and class declarations is that 
+	function declarations are hoisted and class declarations are not.) */
+
+	//const p = new Rectangle(); // ReferenceError 
+	//class Rectangle {}
+	console.log("Class Expression : " + Person.name);//CricketPlayer
+	let player = new SportsPerson("M S Dhoni", 10000, 37, 200);
+	console.log("Player Average : " + player.average);
+
+	let childPhone = new OnePlusPro("OnePlusPro", "8GB", "256GB", "48MegaPixels");
+	childPhone.supportedNetwork(); //Calls child class method.
+	childPhone.printProperties(); //Calls child class method.
+}
+
+//class declaration
+class SportsPerson {
+	/*The body of a class is executed in strict mode, i.e., code written here is subject to stricter syntax 
+	for increased performance, some otherwise silent errors will be thrown, and certain keywords are reserved 
+	for future versions of ECMAScript.*/
+
+	/*By declaring fields up-front, class definitions become more self-documenting, and the fields are always present.*/
+
+	totalInnings = 0; //Public field
+	
+	#age;/*private field - It's an error to reference private fields from outside of the class; they can only be 
+	read or written within the class body. By defining things which are not visible outside of the class, 
+	you ensure that your classes' users can't depend on internals, which may change version to version.
+	Private fields can only be declared up-front in a field declaration.*/
+	
+	constructor(name, runs, age, totalInnings) {
+		/*The constructor method is a special method for creating and initializing an object created with a class.
+		 There can only be one special method with the name "constructor" in a class.
+		 A constructor can use the super keyword to call the constructor of the super class.*/
+		this.name = name;
+		this.runs = runs;
+		this.age = age;
+		this.totalInnings = totalInnings;
+	}
+
+	//Getter
+	get average() {
+		return this.calculateAverage();
+	}
+
+	calculateAverage() {
+		return this.runs/this.totalInnings;
+	}
+}
+
+//class expression - Another way to define a class
+let Person = class CricketPlayer {
+	#age; 
+	constructor(name, runs, age) {
+		this.name = name;
+		this.runs = runs;
+		this.age = age;
+	}
+}
+
+class OnePlus {
+	name = "OnePlus"
+	ram = "6GB";
+	memory = "128GB"
+	constructor(name, ram, memory) {
+		this.name = name;
+		this.ram = ram;
+		this.memory = memory;
+	}
+
+	supportedNetwork() {
+		console.log(this.name + " supports 4G");
+	}
+
+	printProperties() {
+		console.log("Parent - " + this.name);
+	}
+}
+
+
+//Class Inheritance. 
+class OnePlusPro extends OnePlus{
+	camera;
+	constructor(name, ram, memory, camera) {
+		//If there is a constructor present in the subclass, it needs to first call super() before using "this".
+		super(name, ram, memory);
+		this.camera = camera;
+	}
+
+	printProperties() {
+		super.printProperties();
+		console.log("Child - " + this.name +" : " + this.ram + " : " + this.memory);
+	}
+
+	supportedNetwork() {
+		console.log(this.name + " supports 5G");
+	} 
 }
