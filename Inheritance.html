@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="Login.css" />	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="inheritance.js"></script>
+		<script src="inheritance2.js"></script>		
+		<title>
+			Feedback
+		</title>
+	</head>
+	<body>
+		<div id = "commentsForm">
+		
+			&nbsp;<br/>&nbsp;&nbsp;<b> <u>Enter Your Comments : </u> </b>
+			<div id = "Login" >	
+				<input id = "signup" type = "button" value = "Sign up" />
+				<input id = "signin" type = "button" value = "Sign in" /> 
+			</div>
+				
+			<div id = "commentsSection">
+				
+				<div class = "fieldClass">
+					<span class="labelClass" id = "x"> <b> Username : </b> </span>
+					<span>
+						<input id = "username" class = "inputClass"/>
+					</span>
+				</div>
+				<div class = "fieldClass">
+					<span class="labelClass">
+						<Label> <b> Email : </b> </Label>
+					</span>
+					<span>
+						<input id = "password" type = "password" class = "inputClass"/>
+					</span>
+				</div>
+				<div class = "fieldClass middle">
+					<span class="labelClass">
+						<Label> <b> Comments : </b> </Label>
+					</span>
+					<span>
+						<textarea id= "comment" class = "inputClass"></textarea>
+					</span>
+				</div>
+			</div>
+			
+			<div class = "fieldClass">
+				<input id = "submit" type = "submit" value = "Submit" />
+			</div>
+		</div>
+	<body>
+</html>
+
+<script>
+jQuery(document).ready(function() 
+{
+	function a() {};
+      if ( (new a).__proto__ === a.prototype )
+          console.log('Proto Supported');
+	initParams();
+	initParamsInheritance2();
+}
+);
+</script>
