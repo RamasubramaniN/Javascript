@@ -229,6 +229,7 @@ function classExample() {
 	let childPhone = new OnePlusPro("OnePlusPro", "8GB", "256GB", "48MegaPixels");
 	childPhone.supportedNetwork(); //Calls child class method.
 	childPhone.printProperties(); //Calls child class method.
+	chilePhone.parentMethod();//Executes parent method due to inheritance.
 }
 
 //class declaration
@@ -292,6 +293,10 @@ class OnePlus {
 
 	printProperties() {
 		console.log("Parent - " + this.name);
+	}
+
+	parentMethod() {
+		console.log("Present only in parent");
 	}
 }
 
