@@ -11,6 +11,7 @@ function initCall(){
 	getterSetterExample();
 	spreadAttributesExample();
 	classExample();
+	objectDestructuring();
 }
 
 //let is similar to var but let has scope. let is only accessible in the block level it is defined.
@@ -318,4 +319,13 @@ class OnePlusPro extends OnePlus{
 	supportedNetwork() {
 		console.log(this.name + " supports 5G");
 	} 
+}
+
+function objectDestructuring() {
+	let a = {name: "Ram", id: 10, header:{value : 15}};
+	let b = 10;
+	const {name: d, id, header: {value :e}} = a;
+	console.log(d);
+	console.log(id);
+	console.log(e);
 }
